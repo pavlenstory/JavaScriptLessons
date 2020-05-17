@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript">
+	var id = setInterval("myfunct_1()", 1000);
+	var id = setInterval("myfunct_2()", 1000);
+	var id = setInterval("myfunct_3()", 1000);
+	var time_seconds = 0;
+	var time_minutes = 0;
+	var time_hours = 0;
+	function myfunct_1 () {	
+		time_seconds++;
+		document.getElementById("seconds").innerHTML = time_seconds;
+		if(time_seconds == 60) time_minutes+= 1;
+		if (time_seconds == 60) time_seconds = 0;
+	}
+	function myfunct_2 () {	
+		document.getElementById("minutes").innerHTML = time_minutes;
+		if(time_minutes == 60) time_hours+=1;
+		if (time_minutes == 60) time_minutes = 0;
+	}
+		function myfunct_3 () {	
+		document.getElementById("hours").innerHTML = time_hours;
+		if(time_hours == 24) time_hours=0;
+		
+	}
+	</script>
+</head>
+<body >
+	Часов: <span id="hours">0</span>
+	Минут: <span id="minutes">0</span>
+	Секунд: <span id="seconds">0</span>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript">
+		function valid (form) { /* Проверяем заполнил ли пользователь все поля*/
+			var fail = false; /*переменная которая равна фолсе*/
+			var name = form.name.value;/*Обращаемся к имени и к значению*/
+			var password = form.password.value;/*Обращаемся к паролю и к значению*/
+			var Repassword = form.Repassword.value;
+			var Gender = form.Gender.value;
+			var email = form.email.value;
+			
+			var adr_pattern = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}/i;/*Регулярное выражение для проверки Email*/
+			
+			if (name == "" || name == " ") /*Если имя равно нечему или пробелу то*/
+				fail = "Вы не ввели свое имя";/*Выводит текст*/
+			else if(email == "" || email == "")
+				fail = "Вы не ввели email";
+			else if(adr_pattern.test(email) == false)
+				fail ="Вы ввели email неправильно";
+			else if(password == "" || password == " ")
+				fail = "Вы не ввели пароль";
+			else if(password != Repassword)/*если первый пароль на совподает со вторым то мы пишем*/
+				fail = "Пароли несовпадают";
+			else if(Gender == "")
+				fail = "Вы не указали пол";
+			if(fail) 
+				alert(fail);/*Выводит fail*/	
+			else
+				window.location = "https://www.google.by//";/*перенаправляем на другую страницу*/
+			}
+	</script>
+</head>
+<body>
+	<form action="" method="post" name="test" id="form"> 
+		<label for="name">Name:</label>
+		<input type="text" name="name" placeholder="Name" id="name" /> <br />
+		
+		<label for="email">Email:</label>
+		<input type="text" name="email" placeholder="Email" id="email" /> <br />
+		
+		<label for="name">Password:</label>
+		<input type="text" name="password" placeholder="password" id="password" /> <br />
+		
+		<label for="name">Password check:</label>
+		<input type="text" name="Repassword" placeholder="Repassword" id="Repassword" /> <br />
+		
+		<label for="name">Male</label>
+		<input type="radio" name="Gender" value="Man" id="Gender" /> <br />
+		
+		<label for="name">Female</label>
+		<input type="radio" name="Gender" value="Woman" id="Gender" /> <br />
+		
+		<input type="button" onclick="valid(document.getElementById('form'))" name="submit" value="Отправить" />
+</body>
+</html>

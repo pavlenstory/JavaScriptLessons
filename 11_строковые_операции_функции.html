@@ -1,0 +1,20 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var string = "Небольшая строка";
+
+		var text = "Длина строки равна - " + string.length;//выводит длину строки
+		text += "\n Строка в верхнем регистре - " + string.toUpperCase();
+		text += "\n Строка в нижнем регистре - " + string.toLowerCase();
+		text += "\n Обрезанная строка - " + string.substring(1, 5);//обрезаем строку с 2 по 5 элемент
+		text += "\n Трейтий символ это - " + string.charAt(2);// Пишем трейтий символ в нашей строке
+		text += "\n Строка где начинаеться - " + string.indexOf("строка");// ищем где находиться слово "строка"
+		alert(text);
+
+    </script>
+</body>
+</html>

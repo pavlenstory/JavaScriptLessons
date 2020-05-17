@@ -1,0 +1,22 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var global = 12; /*это глобальная переменная*/
+	var i = 10;
+	
+	function test(){
+		global++;
+		var i = 5;/*это локальная переменная*/
+	}
+	
+	test();
+	document.write("Глобал - " + global + " var - " + i);
+			
+	
+	</script>
+</body>
+</html>

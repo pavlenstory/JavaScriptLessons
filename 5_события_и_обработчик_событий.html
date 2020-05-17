@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript">
+	function bclick (buttom){
+		alert("Вы нажали на кнопку");
+		}
+	var counter = 0;
+	function Oncounter (element){
+		counter++;
+		element.innerHTML = "На этот текст навели "  + counter + " раз";
+	}
+	</script>
+</head>
+<body onload="alert('Страница загружена')">
+	<input type="button" name="b" value="Click me" onclick="bclick (this)" />
+	<span onmouseover="Oncounter (this)">На этот текст навели 0 раз</span>
+	
+</body>
+</html>
